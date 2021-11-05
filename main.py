@@ -19,7 +19,7 @@ dates = data['Close'].keys()
 # Matplotlib stuff
 fig, ax = plt.subplots()
 ax.plot(dates, prices, label="Prix officiels")
-ax.xaxis.set_major_locator(mdates.MonthLocator(interval=6))
+ax.xaxis.set_major_locator(mdates.MonthLocator(interval=12))
 ax.xaxis.set_minor_locator(mdates.MonthLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
 ax.format_xdata = mdates.DateFormatter('%Y-%m')
