@@ -19,10 +19,12 @@ dates = data['Close'].keys()
 # Matplotlib stuff
 fig, ax = plt.subplots()
 ax.plot(dates, prices, label="Prix officiels")
+
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=12))
 ax.xaxis.set_minor_locator(mdates.MonthLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-ax.format_xdata = mdates.DateFormatter('%Y-%m')
+ax.format_xdata = mdates.DateFormatter('%Y-%m-%d')
+
 plt.title(f'Prédiction du prix de {crypto} en {currency}')
 plt.xlabel('Temps')
 plt.ylabel('Prix')
