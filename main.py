@@ -31,12 +31,33 @@ for i in range(days, len(prices)):
 x, y = np.array(x), np.array(y)
 x = np.reshape(x, (x.shape[0], x.shape[1], 1))
 
+"""
+x :
+[
+    [
+        [0 < price < 1],
+        [0 < price < 1],
+        ... lenght = days
+    ],
+    [
+        [0 < price < 1],
+        [0 < price < 1],
+        ... lenght = days
+    ],
+    ... lenght = len(data) - days
+]
+y : [0 < price < 1, 0 < price < 1, ...]
+
+y => x[[i (list of n past days)]]   with n = days
+"""
+print(x[:3])
+
+
 
 
 # Recreating real prices
 for i in range(len(prices)):
     prices[i] = prices[i] * max_price
-
 
 # Matplotlib stuff
 fig, ax = plt.subplots()
