@@ -5,6 +5,10 @@ import pandas as pd
 import pandas_datareader as web
 import datetime as dt
 
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
 crypto = 'BTC'
 currency = 'EUR'
 cryptocurrency = f'{crypto}-{currency}'
@@ -30,7 +34,6 @@ for i in range(days, len(prices)):
 
 x, y = np.array(x), np.array(y)
 x = np.reshape(x, (x.shape[0], x.shape[1], 1))
-
 """
 x :
 [
@@ -48,9 +51,17 @@ x :
 ]
 y : [0 < price < 1, 0 < price < 1, ...]
 
-y => x[[i (list of n past days)]]   with n = days
+dataset : (x[[i]] (list of n past days) with n = days, y[i])
+
+model : 
 """
-print(x[:3])
+model = keras.Sequential(
+    [
+        layers.Dense(2, activation="relu"),
+        layers.Dense(3, activation="relu"),
+        layers.Dense(4),
+    ]
+)
 
 
 
