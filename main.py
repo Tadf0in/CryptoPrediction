@@ -33,27 +33,7 @@ for i in range(days, len(prices)):
 
 x, y = np.array(x), np.array(y)
 x = np.reshape(x, (x.shape[0], x.shape[1], 1))
-"""
-x :
-[
-    [
-        [0 < price < 1],
-        [0 < price < 1],
-        ... lenght = days
-    ],
-    [
-        [0 < price < 1],
-        [0 < price < 1],
-        ... lenght = days
-    ],
-    ... lenght = len(data) - days
-]
-y : [0 < price < 1, 0 < price < 1, ...]
 
-dataset : (x[[i]] (list of n past days) with n = days, y[i])
-
-model : 
-"""
 model = keras.Sequential(
     [
         layers.Dense(2, activation="relu"),
@@ -61,10 +41,6 @@ model = keras.Sequential(
         layers.Dense(4),
     ]
 )
-
-
-
-
 
 # Recreating real prices
 for i in range(len(prices)):
