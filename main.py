@@ -65,10 +65,11 @@ model = keras.Sequential(
 
 
 
+
 # Recreating real prices
 for i in range(len(prices)):
     prices[i] = prices[i] * max_price
-    
+
 # Matplotlib stuff
 fig, ax = plt.subplots()
 ax.plot(dates, prices, label="Prix officiels")
