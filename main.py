@@ -53,7 +53,7 @@ y : [0 < price < 1, 0 < price < 1, ...]
 
 dataset : (x[[i]] (list of n past days) with n = days, y[i])
 
-model : 
+model : Sequential
 """
 model = keras.Sequential(
     [
